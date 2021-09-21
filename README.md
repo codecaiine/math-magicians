@@ -11,18 +11,35 @@ Math magicians is a website for all fans of mathematics. It is a Single Page App
 ## Get Started
 
 Please get your browser update.
-To get a local copy up and running follow these simple steps.
 
-Run the command below from the Terminal:
+. To get a local copy up and running follow these simple steps.
+   ```
+   git clone <URL> in your terminal
+   ```
 
-.  Open your terminal or command line
-.  Run git clone and paste the link
-.  Open the folder with your code editor
-.  Create a branch to work on
-.  Run npm install
-.  Run npm run build
-.  Run npm run start to launch the server.
-.  Run npm run test to run the test cases.
+. Run
+   ```
+   cd math-magicians
+   ```
+
+. Install npm
+   ```
+   Run npm install
+   ```
+
+   ```
+   Run npm run build
+   ```
+
+. Launch the server
+   ```
+   Run run start
+   ```
+
+. Run the test 
+   ```
+   npm run test
+   ```
 
 
 ## Author
