@@ -1,6 +1,7 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-const Calculator = class extends PureComponent {
+// eslint-disable-next-line react/prefer-stateless-function
+class Calculator extends React.Component {
   render() {
     return (
       <div className="calculator">
@@ -8,6 +9,8 @@ const Calculator = class extends PureComponent {
           0
 
         </div>
+        {' '}
+        { ' ' }
         {' '}
         <div className="options">
           <button
@@ -19,7 +22,6 @@ const Calculator = class extends PureComponent {
               AC
 
             </span>
-            {' '}
 
           </button>
 
@@ -46,7 +48,6 @@ const Calculator = class extends PureComponent {
 
               %
             </span>
-            {' '}
 
           </button>
 
@@ -71,7 +72,6 @@ const Calculator = class extends PureComponent {
               7
 
             </span>
-            {' '}
 
           </button>
 
@@ -84,7 +84,6 @@ const Calculator = class extends PureComponent {
               8
 
             </span>
-            {' '}
 
           </button>
 
@@ -97,7 +96,6 @@ const Calculator = class extends PureComponent {
               9
 
             </span>
-            {' '}
 
           </button>
 
@@ -110,7 +108,6 @@ const Calculator = class extends PureComponent {
               X
 
             </span>
-            {' '}
 
           </button>
 
@@ -123,7 +120,6 @@ const Calculator = class extends PureComponent {
               4
 
             </span>
-            {' '}
 
           </button>
 
@@ -136,7 +132,6 @@ const Calculator = class extends PureComponent {
               5
 
             </span>
-            {' '}
 
           </button>
 
@@ -149,7 +144,6 @@ const Calculator = class extends PureComponent {
               6
 
             </span>
-            {' '}
 
           </button>
 
@@ -162,7 +156,6 @@ const Calculator = class extends PureComponent {
 
               -
             </span>
-            {' '}
 
           </button>
 
@@ -175,7 +168,6 @@ const Calculator = class extends PureComponent {
               1
 
             </span>
-            {' '}
 
           </button>
 
@@ -188,7 +180,6 @@ const Calculator = class extends PureComponent {
               2
 
             </span>
-            {' '}
 
           </button>
 
@@ -201,7 +192,6 @@ const Calculator = class extends PureComponent {
               3
 
             </span>
-            {' '}
 
           </button>
 
@@ -214,7 +204,6 @@ const Calculator = class extends PureComponent {
 
               +
             </span>
-            {' '}
 
           </button>
 
@@ -227,7 +216,6 @@ const Calculator = class extends PureComponent {
               0
 
             </span>
-            {' '}
 
           </button>
 
@@ -240,7 +228,6 @@ const Calculator = class extends PureComponent {
               .
 
             </span>
-            {' '}
 
           </button>
 
@@ -254,7 +241,6 @@ const Calculator = class extends PureComponent {
               =
 
             </span>
-            {' '}
 
           </button>
 
@@ -263,8 +249,6 @@ const Calculator = class extends PureComponent {
       </div>
     );
   }
-};
-
-Calculator.displayName = 'Calculator';
+}
 
 export default Calculator;

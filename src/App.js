@@ -1,19 +1,12 @@
-import React, { PureComponent } from 'react';
-import './App.css';
+/* eslint-disable */
+
+import React from 'react';
 import Calculator from './components/Calculator';
 
-const App = class extends PureComponent {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-body">
-          <Calculator />
-        </div>
-      </div>
-    );
-  }
-};
-
-App.displayName = 'App';
+class App extends React.Component {
+    render() {
+        return <Calculator / > ;
+    }
+}
 
 export default App;
