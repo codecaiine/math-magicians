@@ -1,254 +1,122 @@
 import React from 'react';
+import calculate from '../logic/calculate';
 
-// eslint-disable-next-line react/prefer-stateless-function
+const buttons = [{
+  text: 'AC',
+},
+{
+  text: '+/-',
+},
+{
+  text: '%',
+},
+{
+  text: '÷',
+  className: 'bg-orange',
+},
+{
+  text: '7',
+},
+{
+  text: '8',
+},
+{
+  text: '9',
+},
+{
+  text: 'x',
+  className: 'bg-orange',
+},
+{
+  text: '4',
+},
+{
+  text: '5',
+},
+{
+  text: '6',
+},
+{
+  text: '-',
+  className: 'bg-orange',
+},
+{
+  text: '1',
+},
+{
+  text: '2',
+},
+{
+  text: '3',
+},
+{
+  text: '+',
+  className: 'bg-orange',
+},
+{
+  text: '0',
+  className: 'span-2-col',
+},
+{
+  text: '.',
+},
+{
+  text: '=',
+  className: 'bg-orange',
+},
+];
+
 class Calculator extends React.Component {
-  render() {
-    return (
-      <div className="calculator">
-        <div className="screen">
-          0
+  constructor(props) {
+    super(props);
 
-        </div>
-        {' '}
-        { ' ' }
-        {' '}
-        <div className="options">
-          <button
-            className="option"
-            type="button"
-            value="AC"
-          >
-            <span>
-              AC
-
-            </span>
-
-          </button>
-
-          <button
-            className="option"
-            type="button"
-            value="+/-"
-          >
-            <span>
-
-              +
-              /-
-
-            </span>
-
-          </button>
-
-          <button
-            className="option"
-            type="button"
-            value="%"
-          >
-            <span>
-
-              %
-            </span>
-
-          </button>
-
-          <button
-            className="option orange"
-            type="button"
-            value="/"
-          >
-            <span>
-              /
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="7"
-          >
-            <span>
-              7
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="8"
-          >
-            <span>
-              8
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="9"
-          >
-            <span>
-              9
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option orange"
-            value="X"
-          >
-            <span>
-              X
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="4"
-          >
-            <span>
-              4
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="5"
-          >
-            <span>
-              5
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="6"
-          >
-            <span>
-              6
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option orange"
-            value="-"
-          >
-            <span>
-
-              -
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="1"
-          >
-            <span>
-              1
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="2"
-          >
-            <span>
-              2
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option"
-            value="3"
-          >
-            <span>
-              3
-
-            </span>
-
-          </button>
-
-          <button
-            type="button"
-            className="option orange"
-            value="+"
-          >
-            <span>
-
-              +
-            </span>
-
-          </button>
-
-          <button
-            className="option zero"
-            type="button"
-            value="0"
-          >
-            <span>
-              0
-
-            </span>
-
-          </button>
-
-          <button
-            className="option"
-            type="button"
-            value="."
-          >
-            <span>
-              .
-
-            </span>
-
-          </button>
-
-          <button
-            className="option orange"
-            type="button"
-            value="="
-          >
-            <span>
-
-              =
-
-            </span>
-
-          </button>
-
-        </div>
-
-      </div>
-    );
+    this.state = {};
   }
+
+    onClickHandler = (event) => {
+      this.setState((prevState) => calculate(prevState, event.target.value));
+    };
+
+    formatOutput = () => {
+      const { total, next, operation } = this.state;
+      const display = (total || '') + (operation || '') + (next || '');
+
+      return display || '0';
+    };
+
+    render() {
+      return (
+        <div className="calculator">
+          <div className="output">
+            <p>
+              {' '}
+              { this.formatOutput() }
+              {' '}
+
+            </p>
+          </div>
+          {' '}
+          <div className="grid">
+            {' '}
+            {
+                buttons.map(({ text, className }) => (
+                  <input
+                    value={text}
+                    className={`button grid-item ${className || ''}`}
+                    key={text}
+                    type="button"
+                    onClick={this.onClickHandler}
+                  />
+                ))
+            }
+            {' '}
+
+          </div>
+          {' '}
+
+        </div>
+      );
+    }
 }
 
 export default Calculator;

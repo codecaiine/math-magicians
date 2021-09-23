@@ -76,7 +76,3 @@ Give a ⭐️ if you like this project!
 - Thanks to Microverse
 - Yannick AKA
 
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
