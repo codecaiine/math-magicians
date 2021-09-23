@@ -1,4 +1,4 @@
-import React from 'react';
+import { useCallback, useState } from 'react';
 import calculate from '../logic/calculate';
 
 const buttons = [{
@@ -66,57 +66,53 @@ const buttons = [{
 },
 ];
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
+const Calculator = () => {
+  const [state, setState] = useState({});
 
-    this.state = {};
-  }
+  const onClickHandler = useCallback((event) => {
+    setState((prev) => {
+      const output = calculate(prev, event.target.value);
+      return ({
+        ...prev,
+        ...output,
+      });
+    });
+  }, []);
 
-    onClickHandler = (event) => {
-      this.setState((prevState) => calculate(prevState, event.target.value));
-    };
+  const { total, next, operation } = state;
+  const display = (total || '') + (operation || '') + (next || '');
 
-    formatOutput = () => {
-      const { total, next, operation } = this.state;
-      const display = (total || '') + (operation || '') + (next || '');
-
-      return display || '0';
-    };
-
-    render() {
-      return (
-        <div className="calculator">
-          <div className="output">
-            <p>
-              {' '}
-              { this.formatOutput() }
-              {' '}
-
-            </p>
-          </div>
+  return (
+    <div className="calculator">
+      <div className="output">
+        <p>
           {' '}
-          <div className="grid">
-            {' '}
-            {
-                buttons.map(({ text, className }) => (
-                  <input
-                    value={text}
-                    className={`button grid-item ${className || ''}`}
-                    key={text}
-                    type="button"
-                    onClick={this.onClickHandler}
-                  />
-                ))
-            }
-            {' '}
-
-          </div>
+          { display || '0' }
           {' '}
 
-        </div>
-      );
-    }
-}
+        </p>
+      </div>
+      {' '}
+      <div className="grid">
+        {' '}
+        {
+            buttons.map(({ text, className }) => (
+              <input
+                value={text}
+                className={`button grid-item ${className || ''}`}
+                key={text}
+                type="button"
+                onClick={onClickHandler}
+              />
+            ))
+        }
+        {' '}
+
+      </div>
+      {' '}
+
+    </div>
+  );
+};
 
 export default Calculator;
