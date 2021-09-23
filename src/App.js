@@ -1,22 +1,12 @@
-import './App.css';
+/* eslint-disable */
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
-          I am Yannick Noel Aka
+import React from 'react';
+import Calculator from './components/Calculator';
 
-        </h1>
-
-        <p>
-          I am learning React at Microverse
-          {' '}
-        </p>
-
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    render() {
+        return <Calculator / > ;
+    }
 }
 
 export default App;
