@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import calculate from '../logic/calculate';
+import './Calculator.css';
 
 const buttons = [{
   text: 'AC',
@@ -87,13 +88,20 @@ const Calculator = () => {
       <div className="output">
         <p>
           {' '}
+          { ' ' }
+          {' '}
           { display || '0' }
           {' '}
+          { ' ' }
 
         </p>
       </div>
       {' '}
+      { ' ' }
+      {' '}
       <div className="grid">
+        {' '}
+        { ' ' }
         {' '}
         {
             buttons.map(({ text, className }) => (
@@ -107,9 +115,11 @@ const Calculator = () => {
             ))
         }
         {' '}
+        { ' ' }
 
       </div>
       {' '}
+      { ' ' }
 
     </div>
   );
