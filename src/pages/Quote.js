@@ -1,13 +1,17 @@
 const Quote = () => (
   <p className="quoteParagraph">
-    Mathematics is not about numbers, equations, computations, or algorithms:
-    It is about understanding.
+    A computer would deserve to be called intelligent
+    if it could deceive a human into believing that it was human.
+    {' '}
+    { ' ' }
     {' '}
     <b>
-      {' '}
-      -William Paul Thurston
-      {' '}
+
+      -Alan Turing
+
     </b>
+    {' '}
+
   </p>
 );
 

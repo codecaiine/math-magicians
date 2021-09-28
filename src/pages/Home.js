@@ -1,10 +1,13 @@
 const Home = () => (
   <div>
-    <div className="homePageWrap">
+    <div className="homePage">
       <h1>
         Welcome to our page
         {' '}
+        { ' ' }
       </h1>
+      {' '}
+      { ' ' }
       {' '}
       <p className="homeParagraph">
         Lorem ipsum dolor sit amet,
@@ -12,7 +15,10 @@ const Home = () => (
         tincidunt malesuada nulla sed,
         rutrum porttitor dui..
         {' '}
+        { ' ' }
       </p>
+      {' '}
+      { ' ' }
       {' '}
       <p className="homeParagraph">
         Lorem ipsum dolor sit amet,
@@ -20,6 +26,7 @@ const Home = () => (
         tincidunt malesuada nulla sed,
         rutrum porttitor dui.
         {' '}
+        { ' ' }
       </p>
 
     </div>
