@@ -86,23 +86,18 @@ const Calculator = () => {
   return (
     <div className="calculator">
       <div className="output">
-        <p>
-          {' '}
-          { ' ' }
-          {' '}
+        <p
+          className="result"
+          role="none"
+        >
+
           { display || '0' }
-          {' '}
-          { ' ' }
 
         </p>
       </div>
-      {' '}
-      { ' ' }
-      {' '}
+
       <div className="grid">
-        {' '}
-        { ' ' }
-        {' '}
+
         {
             buttons.map(({ text, className }) => (
               <input
@@ -114,12 +109,8 @@ const Calculator = () => {
               />
             ))
         }
-        {' '}
-        { ' ' }
 
       </div>
-      {' '}
-      { ' ' }
 
     </div>
   );
