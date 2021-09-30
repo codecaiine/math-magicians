@@ -26,12 +26,15 @@ const Navbar = () => {
         activeClassName="link-active"
         exact
       >
+        { ' ' }
         {' '}
         { link.title }
         {' '}
+        { ' ' }
 
       </NavLink>
       {' '}
+      { ' ' }
 
     </li>
   ));
@@ -42,23 +45,35 @@ const Navbar = () => {
         <NavLink to={links[0].path}>
           <h1>
             {' '}
+            { ' ' }
             Math Magicians
             {' '}
+            { ' ' }
+            {' '}
+
           </h1>
           {' '}
+          { ' ' }
 
         </NavLink>
         {' '}
+        { ' ' }
+        {' '}
         <ul>
+          {' '}
+          { ' ' }
           {' '}
           { createLinks() }
           {' '}
+          { ' ' }
 
         </ul>
         {' '}
+        { ' ' }
 
       </div>
       {' '}
+      { ' ' }
 
     </nav>
   );
