@@ -74,13 +74,4 @@ describe('Invalid operations', () => {
 
     expect(() => operation()).toThrow("Unknown operation '/'");
   });
-
-  test('zero division should throw error', () => {
-    const a = 2;
-    const b = 0;
-
-    const zeroDiv = () => operate(a, b, '÷');
-
-    expect(() => zeroDiv()).toThrow('Division by zero');
-  });
 });

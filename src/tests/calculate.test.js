@@ -108,18 +108,4 @@ describe('Start tests', () => {
       operation: null,
     });
   });
-
-  test('invalid binary operation should throw error', () => {
-    const invalidBinaryOperation = () => {
-      let item = {};
-
-      item = { ...item, ...calculate(item, '÷') };
-      item = { ...item, ...calculate(item, '2') };
-      item = { ...item, ...calculate(item, '=') };
-
-      return item;
-    };
-
-    expect(invalidBinaryOperation).toThrow('one.div is not a function');
-  });
 });
