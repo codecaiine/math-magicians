@@ -5,9 +5,11 @@ import Navbar from '../pages/Navbar';
 
 it('renders correctly', () => {
   const nav = renderer
-    .create(<Router>
-      <Navbar />
-            </Router>)
+    .create(
+      <Router>
+        <Navbar />
+      </Router>,
+    )
     .toJSON();
   expect(nav).toMatchSnapshot();
 });
