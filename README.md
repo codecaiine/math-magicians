@@ -1,9 +1,19 @@
 # Math Magicians
 
 Math magicians is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to make simple calculations, and read a random math-related quote.
+
+![screenshot](./src/images/demo.PNG)
+
+ 
+
+## Live Demo
+
+[Live Demo Link](https://math-magicians-aka.netlify.app/)
+
 ## Built 
 - HTML
 - CSS
+- Javascript
 - React
 - Linters (React & Redux)
 - Git
@@ -12,22 +22,34 @@ Math magicians is a website for all fans of mathematics. It is a Single Page App
 
 Please get your browser update.
 
-To get a local copy up and running follow these simple steps.
-`git clone <URL>`
+. To get a local copy up and running follow these simple steps.
+   ```
+   git clone <URL> in your terminal
+   ```
 
-Run
-`cd math-magicians`
+. Run
+   ```
+   cd math-magicians
+   ```
 
 Install npm
-`npm install`
+   ```
+   npm install
+   ```
 
-`npm run build`
+   ```
+   npm run build
+   ```
 
 Launch the server
-`npm run start `
+   ```
+   run start
+   ```
 
 Run the test 
-`run test`
+   ```
+   npm run test
+   ```
 
 
 ## Author
@@ -53,8 +75,5 @@ Give a ⭐️ if you like this project!
 
 - Thanks to Microverse
 - Yannick AKA
+- [ReactJs Examples](https://reactjsexample.com/tag/calculator/)
 
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.

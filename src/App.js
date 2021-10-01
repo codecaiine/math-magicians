@@ -1,22 +1,37 @@
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Calculator from './components/Calculator';
+import Navbar from './pages/Navbar';
+import Home from './pages/Home';
+import Quote from './pages/Quote';
+import NotMatch from './pages/NotMatch';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
-          I am Yannick Noel Aka
+const App = () => (
+  <Router basename={process.env.PUBLIC_URL}>
+    <div className="app">
+      <Navbar />
+      <Switch>
+        <Route path="/calculator">
+          <Calculator />
+        </Route>
+        {' '}
+        <Route path="/quote">
+          <Quote />
+        </Route>
+        {' '}
+        <Route
+          exact
+          path="/"
+        >
+          <Home />
+        </Route>
+        {' '}
+        <Route path="*">
+          <NotMatch />
+        </Route>
 
-        </h1>
-
-        <p>
-          I am learning React at Microverse
-          {' '}
-        </p>
-
-      </header>
+      </Switch>
     </div>
-  );
-}
+  </Router>
+);
 
 export default App;
