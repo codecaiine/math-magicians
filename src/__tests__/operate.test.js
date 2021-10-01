@@ -74,4 +74,8 @@ describe('Invalid operations', () => {
 
     expect(() => operation()).toThrow("Unknown operation '/'");
   });
+
+  test('Should not divide by zero', () => {
+    expect(operate('10', '0', '÷')).toBe("Can't divide by 0.");
+  });
 });
